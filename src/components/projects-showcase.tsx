@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { staggerContainer } from "@/lib/animations";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ProjectCard } from "@/components/project-card";
-import { ProjectsNodeGrid } from "@/components/svg/projects-node-grid";
 
 const projects = [
   {
@@ -44,11 +43,6 @@ const projects = [
 export function ProjectsShowcase() {
   return (
     <section className="relative py-24 md:py-32 px-6 bg-bg overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0">
-        <ProjectsNodeGrid />
-      </div>
-
       <div className="relative z-10 max-w-6xl mx-auto">
         <SectionHeading
           eyebrow="§ Projects"

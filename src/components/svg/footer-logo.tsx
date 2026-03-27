@@ -22,6 +22,7 @@ export function FooterLogo() {
             fontSize="8"
             fontFamily="var(--font-jetbrains)"
             fontWeight="bold"
+            letterSpacing="0.5px"
           >
             RR
           </text>

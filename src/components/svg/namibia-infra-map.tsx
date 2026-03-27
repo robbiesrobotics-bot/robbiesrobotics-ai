@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 
 const nodes = [
   { id: "windhoek", x: 280, y: 180, label: "WINDHOEK", status: "live" },
@@ -90,6 +90,8 @@ export function NamibiaInfraMap() {
         {[0, 1, 2].map((i) => (
           <motion.circle
             key={`particle-${i}`}
+            cx={280}
+            cy={180}
             r="3"
             fill="#34d399"
             initial={{ opacity: 0 }}

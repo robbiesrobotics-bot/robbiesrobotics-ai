@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 
 const satellites = [
   { id: "namibia", x: 15, y: 30, label: "namibia" },
@@ -11,11 +11,28 @@ const satellites = [
   { id: "openai", x: 75, y: 15, label: "openai" },
 ];
 
+const PARTICLE_COUNT = 8;
+
 export function HeroOrchestration() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  // Refs for the 8 floating particle circles — used to set cx/cy via setAttribute
+  // with null guards to prevent Framer Motion lifecycle console errors
+  const particleRefs = useRef<(SVGCircleElement | null)[]>([]);
+  particleRefs.current = [];
+
+  const setParticleRef = useCallback((i: number) => (el: SVGCircleElement | null) => {
+    particleRefs.current[i] = el;
+    if (el) {
+      const cx = 10 + i * 12;
+      const cy = 20 + (i % 3) * 25;
+      if (cx != null) el.setAttribute("cx", String(cx));
+      if (cy != null) el.setAttribute("cy", String(cy));
+    }
   }, []);
 
   return (
@@ -134,27 +151,32 @@ export function HeroOrchestration() {
           </motion.g>
         ))}
 
-        {/* Floating particles */}
-        {[...Array(8)].map((_, i) => (
-          <motion.circle
-            key={i}
-            cx={10 + i * 12}
-            cy={20 + (i % 3) * 25}
-            r="0.4"
-            fill="#34d399"
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: [0, 0.8, 0],
-              y: [0, -5, 0],
-            }}
-            transition={{
-              duration: 3,
-              delay: i * 0.4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
+        {/* Floating particles — 8 ambient dots animated via CSS y-transform */}
+        {Array.from({ length: PARTICLE_COUNT }, (_, i) => {
+          const cx = 10 + i * 12;
+          const cy = 20 + (i % 3) * 25;
+          return (
+            <motion.circle
+              key={i}
+              cx={cx}
+              cy={cy}
+              r="0.4"
+              fill="#34d399"
+              ref={setParticleRef(i)}
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: [0, 0.8, 0],
+                y: [cy, cy - 5, cy],
+              }}
+              transition={{
+                duration: 3,
+                delay: i * 0.4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          );
+        })}
       </svg>
     </div>
   );

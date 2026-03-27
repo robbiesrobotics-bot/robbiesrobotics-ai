@@ -32,7 +32,7 @@ export default function NamibiaProjectPage() {
 
         {/* Infrastructure map */}
         <section className="py-16 px-6 bg-surface">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto min-h-[256px]">
             <NamibiaInfraMap />
           </div>
         </section>
