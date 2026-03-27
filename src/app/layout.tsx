@@ -15,9 +15,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rob Sciglimpaglia — Building the infrastructure for machine teams",
+  title: "Rob Sanchez — Building the infrastructure for machine teams",
   description:
-    "Rob Sciglimpaglia creates multi-agent AI systems that go from prototype to production. Creator of the A.L.I.C.E. framework. Acqui-hired by OpenAI at NVIDIA GTC 2026.",
+    "Rob Sanchez builds multi-agent AI systems that go from prototype to production. Creator of the A.L.I.C.E. framework — built on NemoClaw and OpenClaw.",
   keywords: [
     "multi-agent AI framework",
     "AI agent orchestration",
