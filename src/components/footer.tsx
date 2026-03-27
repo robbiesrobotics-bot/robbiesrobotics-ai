@@ -55,7 +55,7 @@ export function Footer() {
             © {currentYear} Rob Sanchez
           </p>
           <Link
-            href="https://alice-agents.ai"
+            href="https://getalice.av3.ai"
             className="text-[12px] text-text-3 hover:text-primary-2 transition-colors flex items-center gap-1"
           >
             Built with A.L.I.C.E.

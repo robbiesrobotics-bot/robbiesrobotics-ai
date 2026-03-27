@@ -80,8 +80,8 @@ export default function AliceProjectPage() {
           subtitle="The open-source framework for coordinating multiple AI agents at production scale."
         >
           <div className="flex flex-wrap gap-4 justify-center mt-4">
-            <Button asChild href="https://github.com/robbiesrobotics/alice">
-              <Link href="https://github.com/robbiesrobotics/alice">View on GitHub</Link>
+            <Button asChild href="https://github.com/robbiesrobotics/alice-agents">
+              <Link href="https://github.com/robbiesrobotics/alice-agents">View on GitHub</Link>
             </Button>
             <Button variant="secondary" asChild href="/projects">
               <Link href="/projects">All Projects</Link>
@@ -186,8 +186,8 @@ export default function AliceProjectPage() {
               transition={{ delay: 0.2 }}
               className="flex flex-wrap gap-4 justify-center"
             >
-              <Button asChild href="https://github.com/robbiesrobotics/alice">
-                <Link href="https://github.com/robbiesrobotics/alice">Get Started</Link>
+              <Button asChild href="https://github.com/robbiesrobotics/alice-agents">
+                <Link href="https://github.com/robbiesrobotics/alice-agents">Get Started</Link>
               </Button>
               <Button variant="secondary" asChild href="/contact">
                 <Link href="/contact">Talk to Rob</Link>
