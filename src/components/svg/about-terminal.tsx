@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const terminalLines = [
   { type: "command", text: "$ whoami" },
-  { type: "output", text: "> rob.sciglimpaglia" },
+  { type: "output", text: "> rob.sanchez" },
   { type: "command", text: "$ cat expertise.txt" },
   { type: "output", text: "> multi-agent orchestration" },
   { type: "output", text: "> ai infrastructure" },

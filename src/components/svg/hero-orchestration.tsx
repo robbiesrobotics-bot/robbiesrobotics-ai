@@ -8,7 +8,6 @@ const satellites = [
   { id: "mission-ctrl", x: 30, y: 70, label: "mission-ctrl" },
   { id: "alicefleet", x: 70, y: 75, label: "alicefleet" },
   { id: "agents", x: 85, y: 40, label: "agents" },
-  { id: "openai", x: 75, y: 15, label: "openai" },
 ];
 
 const PARTICLE_COUNT = 8;
